@@ -1,0 +1,197 @@
+* {
+    margin: 0px;
+}
+
+.full-body {
+    height: 4500px;
+    background-color: gray;
+}
+
+.header {
+    background-color: white;
+    height: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-items {
+    background-color: rgb(168, 24, 24);
+    height: 90%;
+    width: 99%;
+}
+
+.main-content {
+    background-color: rgb(255, 0, 200);
+    height: 90%;
+    margin: 5px;
+}
+
+.Slideshow-Section {
+    display: flex;
+    background-color: aquamarine;
+    height: 13%;
+}
+
+.Images-Slideshow {
+    background-color: white;
+    width: 100%;
+    margin: 2px;
+}
+
+.Welcome-Register-Section {
+    display: flex;
+    background-color: aquamarine;
+    height: 12%;
+}
+
+.shoolini-socials-intro {
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    margin: 2px;
+}
+
+.Directors-Message {
+    background-color: rgb(255, 255, 255);
+    width: 60%;
+    margin: 2px;
+}
+
+.Events-Notice-Section {
+    display: flex;
+    background-color: aquamarine;
+    height: 14%;
+}
+
+.notice-board {
+    background-color: white;
+    width: 40%;
+    margin: 2px;
+}
+
+.events-detail-cards-box {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 60%;
+    margin: 2px;
+}
+
+.events-highlights-row1 {
+    background-color: wheat;
+    height: 65%;
+    margin: 2px;
+}
+
+.find-event-row2 {
+    display: flex;
+    background-color: wheat;
+    height: 35%;
+    margin: 2px;
+}
+
+.find-event-column1 {
+    background-color: blueviolet;
+    width: 60%;
+    margin: 4px;
+}
+
+.find-event-description-column2 {
+    background-color: blueviolet;
+    width: 40%;
+    margin: 4px;
+}
+
+.Stats-Horizontal-Section {
+    display: flex;
+    background-color: aquamarine;
+    height: 20%;
+}
+
+.alumni-stats {
+    background-color: rgb(255, 255, 255);
+    width: 40%;
+    margin: 2px;
+}
+
+.chapters-batch-box {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 60%;
+    margin: 2px;
+}
+
+.chapters-row1 {
+    display: flex;
+    background-color: black;
+    height: 70%;
+
+}
+
+.be-a-mentors {
+    width: 50%;
+    background-color: wheat;
+    margin: 2px;
+}
+
+.chapters-row1-col2 {
+    width: 50%;
+    background-color: wheat;
+    margin: 2px;
+}
+
+.description-chapter-batch-box-row2-col1 {
+    height: 100%;
+    background-color: wheat;
+    margin: 2px;
+}
+
+.Achievers-Section {
+    display: flex;
+    background-color: aquamarine;
+    height: 20%;
+}
+
+.achievers-detail-cards {
+    background-color: white;
+    width: 100%;
+    margin: 2px;
+}
+
+.Mentorship-Testimonials-Section {
+    display: flex;
+    background-color: aquamarine;
+    height: 10%;
+}
+
+.Testimonials {
+    background-color: white;
+    width: 60%;
+    margin: 2px;
+
+}
+
+.stories {
+    background-color: white;
+    width: 40%;
+    margin: 2px;
+}
+
+.Gallary-Section {
+    display: flex;
+    background-color: aquamarine;
+    height: 11%;
+}
+
+.gallary {
+    width: 100%;
+    background-color: white;
+    margin: 2px;
+
+}
+
+.footer {
+    background-color: white;
+    height: 7%;
+}
