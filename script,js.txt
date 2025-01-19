@@ -1,0 +1,53 @@
+document.addEventListener("DOMContentLoaded", function () {
+    const slideshow = document.querySelector(".my-slideshow");
+    const slides = slideshow.querySelectorAll(".my-slide");
+    const prevBtn = document.querySelector(".prev");
+    const nextBtn = document.querySelector(".next");
+    const indicatorsContainer = document.querySelector(".indicators");
+
+    let currentSlide = 0;
+
+    // Function to show a specific slide
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+        });
+
+        const indicators = indicatorsContainer.querySelectorAll(".indicator");
+        indicators.forEach((indicator, i) => {
+            indicator.classList.toggle("active", i === index);
+        });
+    }
+
+    // Function to move to the next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Function to move to the previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Create indicators
+    slides.forEach((_, index) => {
+        const indicator = document.createElement("div");
+        indicator.classList.add("indicator");
+        if (index === currentSlide) indicator.classList.add("active");
+        indicator.addEventListener("click", () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+        });
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    // Add event listeners for buttons
+    nextBtn.addEventListener("click", nextSlide);
+    prevBtn.addEventListener("click", prevSlide);
+
+    // Initialize slideshow
+    showSlide(currentSlide);
+    setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
+});
