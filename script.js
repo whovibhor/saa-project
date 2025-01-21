@@ -130,3 +130,37 @@ document.addEventListener("DOMContentLoaded", () => {
         observer.observe(counter);
     });
 });
+
+//for AMP effect
+document.addEventListener("DOMContentLoaded", () => {
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const h3 = entry.target.querySelector("h3");
+                    if (h3) {
+                        h3.style.animationPlayState = "running";
+                    }
+                }
+            });
+        },
+        {
+            threshold: 0.5, // Trigger when 50% of the element is visible
+        }
+    );
+
+    // Select all heading intro elements
+    const headingIntro = document.querySelector(".heading-intro");
+    if (headingIntro) {
+        // Initially set animationPlayState to paused
+        const h3 = headingIntro.querySelector("h3");
+        if (h3) {
+            h3.style.animationPlayState = "paused";
+        }
+
+        // Observe the element
+        observer.observe(headingIntro);
+    }
+});
+

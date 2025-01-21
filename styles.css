@@ -263,6 +263,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    margin-top: 7%;
 }
 
 .my-slideshow {
@@ -967,30 +968,217 @@ body {
 
 .chapters-batch-box {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     background-color: rgb(255, 255, 255);
     width: 60%;
+    height: 633px;
 }
 
 .chapters-row1 {
     display: flex;
-    background-color: black;
-    height: 70%;
+    height: 80%;
 }
 
-.be-a-mentors {
-    width: 50%;
-    background-color: wheat;
-    margin: 2px;
+.be-a-mentor-container {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Adjust height as needed */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.be-a-mentor-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.buttons-container {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px rgb(232, 232, 232) solid;
+}
+
+.AMP-button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #F02F2D;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+
+}
+
+.be-a-mentor {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.mentor-card {
+    background-color: white;
+    background-image: linear-gradient(111deg, #ff0300, #eb2f96);
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.mentor-card h3 {
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: white;
+    margin-top: 10px;
+}
+
+.mentor-card p {
+    font-size: 17px;
+    margin-bottom: 20px;
+    font-family: "Poppins";
+    color: white;
+    text-align: left;
+    padding: 25px;
+}
+
+.mentor-button {
+    background-color: white;
+    color: #F02F2F;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mentor-button:hover {
+    background-color: #F02F2F;
+    color: white;
+    box-shadow: 0 4px 10px rgba(240, 47, 47, 0.5);
 }
 
 .chapters-row1-col2 {
-    width: 50%;
-    background-color: wheat;
+    width: 65%;
     margin: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.chapters-batch-box-col2 {
+    background-color: white;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.chapters-batch-box-col2 h3 {
+    font-size: 24px;
+    color: #F02F2F;
+    margin-top: 20px;
+    text-align: right;
+    font-family: "Poppins";
+}
+
+.chapters-batch-box-col2 p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    text-align: left;
+    font-family: "Poppins";
+}
+
+.chapters-batch-box-col2 ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-family: "Poppins";
+}
+
+.chapters-batch-box-col2 li {
+    font-size: 16px;
+    color: #555;
+    font-family: "Poppins";
+}
+
+.chapters-batch-box-col2 li strong {
+    color: #F02F2F;
+}
+
+.chapters-batch-box-col2 strong {
+    color: #F02F2F;
 }
 
 .description-chapter-batch-box-row2-col1 {
-    height: 100%;
+    height: 20%;
     background-color: wheat;
+    display: flex;
+}
+
+.description-chapter-batch-box-row2-col1-text {
+    width: 100%;
+    max-height: 100%;
+    padding: 20px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes typing-effect {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+.heading-intro h3 {
+    text-align: center;
+    font-size: 50px;
+    font-family: "Poppins";
+    letter-spacing: 0.5px;
+    color: #F02F2D;
+    margin-bottom: 30px;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-block;
+    animation: typing-effect 2.5s steps(30, end), blink 0.3s step-end infinite alternate;
+    animation-play-state: paused;
+    /* Ensure animation is paused initially */
+}
+
+
+.intro-paragraph p {
+    font-family: "Poppins";
+    font-size: 24px;
+    font-weight: 500;
+    text-align: center;
+    border: 2px dotted grey;
+    padding: 20px;
+    font-style: italic;
 }
