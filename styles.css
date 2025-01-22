@@ -7,7 +7,7 @@ body {
 }
 
 .full-body {
-    height: 4500px;
+    max-height: 5000px;
     background-color: gray;
 }
 
@@ -1181,4 +1181,274 @@ body {
     border: 2px dotted grey;
     padding: 20px;
     font-style: italic;
+}
+
+.Achievers-Section {
+    display: flex;
+    height: 40%;
+    box-sizing: border-box;
+}
+
+.achievers-detail-cards {
+    width: 100%;
+    margin: 2px;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: column;
+}
+
+.notable-alumni {
+    border: 1px solid white;
+    height: 50%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.heading-notable-alumni {
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 3px #F02F2D solid;
+    border-bottom: 3px #F02F2D solid;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.heading-notable-alumni h3 {
+    text-align: center;
+    font-size: 50px;
+    font-family: "Poppins";
+    letter-spacing: 0.5px;
+    color: #F02F2D;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.gallary-notable-alumni {
+    height: 600px;
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.intro-gna {
+    background-image: linear-gradient(111deg, #ff0300, #d42686);
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px 0 0 20px;
+}
+
+.intro-gna h2 {
+    font-size: 88px;
+    color: white;
+    margin-left: 30px;
+    line-height: 1.5;
+    font-family: "Roboto";
+}
+
+.cards-gna {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows cards to wrap onto the next line */
+    gap: 20px;
+    overflow-y: auto;
+    padding: 5px;
+    scrollbar-width: thin;
+    scrollbar-color: #5d5d5d transparent;
+    scroll-behavior: smooth;
+}
+
+.cards-gna::-webkit-scrollbar {
+    width: 8px;
+}
+
+.cards-gna::-webkit-scrollbar-thumb {
+    background: #d42686;
+    border-radius: 10px;
+}
+
+.card {
+    display: flex;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex-basis: calc(50% - 10px);
+    max-width: calc(50% - 10px);
+    height: 31%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition */
+}
+
+.card:hover {
+    transform: scale(1.01);
+    /* Slightly enlarges the card */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    /* Adds a more pronounced shadow */
+}
+
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-description {
+    padding: 10px;
+    flex-grow: 1;
+    font-family: "Roboto";
+}
+
+.card-description h3 {
+    margin-bottom: 5px;
+    color: #F02f2D;
+    font-size: 1.2em;
+}
+
+.card-description p {
+    margin: 2px 0;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.card-description a {
+    color: #F02f2D;
+    text-decoration: none;
+}
+
+.card-description a:hover {
+    text-decoration: underline;
+}
+
+.achievers-gallary {
+    border-radius: 10px;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-ag {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 98%;
+    border: 2px dotted grey;
+    border-radius: 20px;
+    margin: 15px;
+}
+
+.intro-ag h3 {
+    font-size: 88px;
+    color: #F02F2F;
+    line-height: 1.5;
+    font-family: "Roboto";
+}
+
+.gallary-ag {
+    height: 80%;
+    margin: 0;
+    padding: 5px;
+    margin: 15px;
+    background-image: url('./assets/vectors/bg-girl.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    background-color: #F02F2D;
+    border: 2px dotted grey;
+    border-radius: 20px;
+}
+
+
+
+
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.logos {
+    overflow: hidden;
+    padding: 30px 0;
+    white-space: nowrap;
+    position: relative;
+
+}
+
+.logos:before,
+.logos:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.logos-slide img:hover {
+    transform: scale(1.05);
+}
+
+.logos-slide {
+    display: inline-block;
+    animation: 35s slide infinite linear;
+
+}
+
+.logos-slide img {
+    height: 150px;
+    margin: 0 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+/* Targeting the second row specifically */
+.gallary-ag .logos:nth-child(2) .logos-slide img {
+    height: 50px;
+    /* Set height for images in the second row */
+}
+
+/* Reverse animation for the second row */
+.gallary-ag .logos:nth-child(2) .logos-slide {
+    animation: slide-reverse 35s infinite linear;
+    /* Use reversed animation */
+}
+
+/* Default animation for other rows */
+.gallary-ag .logos-slide {
+    animation: slide 35s infinite linear;
+}
+
+/* Keyframes for normal sliding (left to right) */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Keyframes for reversed sliding (right to left) */
+@keyframes slide-reverse {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
 }
