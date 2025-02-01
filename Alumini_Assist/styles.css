@@ -223,6 +223,11 @@ body {
     font-family: "Poppins";
 }
 
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .header.scrolled .navbar div {
     color: #F02F2F;
 }
