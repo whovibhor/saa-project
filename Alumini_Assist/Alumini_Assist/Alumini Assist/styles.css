@@ -1,0 +1,603 @@
+* {
+    margin: 0px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.full-body {
+    height: 1220px;
+    background-color: gray;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    height: 90%;
+}
+
+/* Header Styles */
+.header {
+    background-color: #F02F2F;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled {
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 109.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header Items */
+.header-items {
+    width: 100%;
+    margin: 1px;
+    display: flex;
+    transition: height 0.3s ease;
+}
+
+.header.scrolled .header-items {
+    height: 109.8px;
+}
+
+/* Logo Container */
+.header-logo {
+    width: 18%;
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    height: 75%;
+    width: 75%;
+    position: relative;
+}
+
+.logo-container img {
+    height: 100%;
+    width: auto;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.3s ease;
+}
+
+.logo-red {
+    opacity: 0;
+}
+
+.logo-white {
+    opacity: 1;
+}
+
+.header.scrolled .logo-red {
+    opacity: 1;
+}
+
+.header.scrolled .logo-white {
+    opacity: 0;
+}
+
+/* Header Info Part */
+.header-info-part {
+    width: 82%;
+    margin: 1px;
+}
+
+.info-part-container {
+    height: 100%;
+    margin: 0.5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.header.scrolled .info-part-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Upper Header */
+.upper-header {
+    height: 40%;
+    margin: 1px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: right;
+    transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+.upper-header-container {
+    width: 50%;
+    height: 28px;
+    margin-right: 7%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    border: 0.5px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+.upper-header-container p {
+    display: inline-block;
+    font-family: "Roboto";
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+}
+
+.directory-button,
+.email-button,
+.login-register-button,
+.search-in-page-button {
+    height: 55%;
+    width: 110px;
+    margin: 2px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.search-with-svg {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 90%;
+    margin: 2px;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.search-with-svg:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.search-text {
+    margin-left: 28px;
+}
+
+.search-svg {
+    display: flex;
+    width: 15px;
+}
+
+.header.scrolled .upper-header {
+    opacity: 0;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+/* Lower Header */
+.lower-header {
+    height: 60%;
+    margin: 1px;
+    display: flex;
+    gap: 50px;
+    transition: all 0.3s ease;
+}
+
+.header.scrolled .lower-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navbar */
+.navbar-container {
+    width: 775px;
+    height: 76px;
+    margin-left: 136px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.navbar div {
+    color: white;
+    font-size: 18px;
+    font-family: "Poppins";
+}
+
+.header.scrolled .navbar div {
+    color: #F02F2F;
+}
+
+/* Sponsorship Button */
+.Sponsership {
+    width: 300px;
+    height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Sponsership-Button button {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: #F02F2D;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.header.scrolled .Sponsership-Button button {
+    color: white;
+    background-color: #F02F2F;
+    border: 2px solid #F02F2F;
+}
+
+.header-cover {
+    background-color: #9a1f1f;
+    height: 114px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header CSS over */
+
+/* Alumini Sub Header */
+.AluminiHead-View {
+    width: 100%;
+    height: 6%;
+    background-color: #fff;
+}
+
+.aluminiSuppHead-Section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.aluminiSuppText {
+    display: flex;
+    flex-direction: row;
+    width: 48%;
+    padding-left: 2%;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 250%;
+    align-self: center;
+}
+
+.backToHome {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 48%;
+    padding-right: 2%;
+    font-family: "Poppins", serif;
+    font-weight: 200;
+    font-style: normal;
+    align-self: center;
+}
+
+.homeLink {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.current {
+    color: rgb(0, 0, 0, 0.6);
+}
+
+/* Overview section with image and text */
+.Article-card-container-main {
+    height: auto;
+    width: 100%;
+}
+
+.overview-Section {
+    display: flex;
+    flex-direction: row;
+    width: 88%;
+    padding: 0 5% 0 5%;
+    height: 100%;
+}
+
+/* Overview image */
+.overviewImage-Section {
+    width: 30%;
+    height: auto;
+    text-align: center;
+}
+
+.overviewImage-Section .overviewImage {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    object-fit: contain;
+}
+
+/* Overview text */
+.overviewText-Section {
+    width: 70%;
+    height: auto;
+    padding: 0 1.5% 1% 1.5%;
+}
+
+.overviewText {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.7;
+    text-align: justify;
+    font-size: 19px;
+}
+
+/* Overview section responsiveness css */
+@media screen and (max-width: 768px) {
+    .overviewImage-Section {
+        padding: 0 10px;
+    }
+
+    .overviewImage-Section .overviewImage {
+        max-width: 90%;
+    }
+
+    .overviewText-Section {
+        padding: 15px 20px;
+    }
+
+    .overviewText {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+}
+
+/* Horizontal Desktop Vertical Mobile Menu */
+.horizontalMenu_Section {
+    height: auto;
+    width: 100%;
+}
+
+.menu-Section {
+    border-color: rgb(0, 0, 0, 0.4);
+    border-top-style: solid;
+    border-bottom-style: solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 0;
+    height: auto;
+}
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+}
+
+.menu li {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.menu li:hover {
+    color: #ff4d4d;
+    transform: translateY(-2px);
+}
+
+.menu a {
+    text-decoration: none;
+    color: gray;
+    font-family: "Poppins", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.menu a:hover {
+    color: #ff4d4d;
+    transform: translateY(-2px);
+}
+
+/* Horizontal Desktop Vertical Mobile Menu responsiveness css */
+@media screen and (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .menu li {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .menu li:last-child {
+        border-bottom: none;
+    }
+}
+
+.MenuDisplay_Section {
+    width: 100%;
+    height: 41%;
+    /* Fixed height - adjust this value as needed */
+    background-color: #fff;
+}
+
+.MenuDisplay_Section iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+}
+
+/* footer styling */
+.footer {
+    display: flex;
+    width: 100%;
+    /* border-top: 1px solid #ff4d4d; */
+
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    background-color: #01012b;
+}
+
+.footer-section {
+    flex: 1;
+    padding-top: 25px;
+    text-transform: capitalize;
+    background-color: #01012b;
+}
+
+.links {
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.logo-section {
+    background-color: #01012b;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    padding: 20px 0 20px 0;
+}
+
+.logo-section p {
+    color: #fff;
+}
+
+.logo {
+    height: 150px;
+    object-fit: contain;
+}
+
+.certification {
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.footer .social-links {
+    margin-top: 10px;
+}
+
+.footer .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #000;
+    transition: all 0.5s ease;
+
+}
+
+.footer .social-links a:hover {
+    color: #fff;
+    transform: scale(1.2);
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #bebcbc;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    padding-left: 12px;
+    color: #fff;
+}
+
+.contact-section p {
+    margin: 20px 0;
+    color: #fff;
+}
+
+p.footer-link {
+    padding: 1px;
+    /* position: relative; */
+    /* font-size: 15px !important; */
+    color: #ffff;
+
+}
+
+.mail-link {
+    text-transform: lowercase;
+    color: #bebcbc;
+    text-decoration: none;
+    font-size: 11px;
+    transition: all 0.2s ease-in-out;
+}
+
+.mail-link:hover {
+    padding-bottom: 2px;
+    color: #fff;
+}

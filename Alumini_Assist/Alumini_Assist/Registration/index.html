@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Alumini Assist_Registration</title>
+</head>
+
+<body>
+    <div class="full-body">
+        <div class="form-container">
+            <h1>Shoolini University, Solan, Himachal Pradesh</h1>
+            <h2>ALUMNI MEMBERSHIP FORM</h2>
+            <p><strong>Ref No:</strong> AMF2017-2020/Feb21-Form6C-CC-1</p>
+            <form>
+              <!-- Left Section -->
+              <div class="form-row">
+                <div class="form-column">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" required>
+        
+                  <label for="prn">PRN</label>
+                  <input type="text" id="prn" name="prn" required>
+        
+                  <label for="program">Program</label>
+                  <input type="text" id="program" name="program" required>
+        
+                  <label for="address">Permanent Address</label>
+                  <input type="text" id="address" name="address" required>
+        
+                  <label for="state">State</label>
+                  <input type="text" id="state" name="state" required>
+        
+                  <label for="mobile">Mob No</label>
+                  <input type="text" id="mobile" name="mobile" required>
+        
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+        
+                <!-- Right Section -->
+                <div class="form-column">
+                  <label for="gender">Gender</label>
+                  <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="M" required>
+                    <label for="male">M</label>
+                    <input type="radio" id="female" name="gender" value="F">
+                    <label for="female">F</label>
+                  </div>
+        
+                  <label for="dob">Date of Birth</label>
+                  <input type="date" id="dob" name="dob" required>
+        
+                  <label for="graduation-year">Year of Graduation</label>
+                  <input type="text" id="graduation-year" name="graduation-year" required>
+        
+                  <label for="city">City</label>
+                  <input type="text" id="city" name="city" required>
+        
+                  <label for="pin">Pin</label>
+                  <input type="text" id="pin" name="pin" required>
+        
+                  <label for="landline">Landline No</label>
+                  <input type="text" id="landline" name="landline">
+        
+                  <label for="photo">Upload Photo</label>
+                  <input type="file" id="photo" name="photo" accept="image/jpeg, image/png" required>
+                  <small>[Please upload photo up to 2MB size and in jpg/jpeg/png format only.]</small>
+                </div>
+              </div>
+        
+              <!-- Declaration Section -->
+              <div class="declaration">
+                <p>
+                  I am willingly nominating myself and giving consent to become a member of Symbiosis Skills & Professional University’s Alumni Association. I will be available for activities conducted by Alumni Association in the future.
+                </p>
+                <p>
+                  I will be interested in taking up the responsibility as the Office Bearer of Alumni
+                  <br>
+                  <input type="checkbox" id="president" name="office-bearer" value="President">
+                  <label for="president">President</label>
+        
+                  <input type="checkbox" id="vice-president" name="office-bearer" value="Vice President">
+                  <label for="vice-president">Vice President</label>
+        
+                  <input type="checkbox" id="secretary" name="office-bearer" value="Secretary">
+                  <label for="secretary">Secretary</label>
+        
+                  <input type="checkbox" id="member" name="office-bearer" value="Member">
+                  <label for="member">Member</label>
+                </p>
+                <p>
+                  I will be interested in participating in the Students’ Activities and Guest Lectures
+                  <br>
+                  <input type="radio" id="yes" name="participation" value="YES" required>
+                  <label for="yes">YES</label>
+        
+                  <input type="radio" id="no" name="participation" value="NO">
+                  <label for="no">NO</label>
+                </p>
+              </div>
+        
+              <!-- Submit Button -->
+              <div class="submit-section">
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+          </div>
+    </div>
+</body>
+
+</html>
