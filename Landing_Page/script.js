@@ -164,3 +164,30 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const alumniCardsContainer = document.querySelector('.alumni-cards');
+    const alumniCards = Array.from(alumniCardsContainer.children);
+
+    function displayThreeRandomCards() {
+        // Hide all cards initially
+        alumniCards.forEach(card => card.style.display = 'none');
+
+        // Get three unique random indices
+        let indices = [];
+        while (indices.length < 3) {
+            let randomIndex = Math.floor(Math.random() * alumniCards.length);
+            if (!indices.includes(randomIndex)) {
+                indices.push(randomIndex);
+            }
+        }
+
+        // Display only three random cards
+        indices.forEach(index => {
+            alumniCards[index].style.display = 'flex';
+        });
+    }
+
+    displayThreeRandomCards(); // Initial display
+    setInterval(displayThreeRandomCards, 5000); // Refresh every 5 seconds
+});
+
