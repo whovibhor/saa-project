@@ -1,12 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0px;
 }
 
 .full-body {
     height: Auto;
-    font-family: "Roboto", serif;
+    font-family: "Poppins", serif;
 }
 
 .ShooliniSocial_Section{
@@ -34,9 +33,14 @@
   line-height: 2;
 }
 
+strong {
+  font-size: 20px;
+  color: #f02f2d;
+}
+
 /* Shoolini Social Button */
 .shoolinisocial_button{
-  text-align: center;
+  margin-left: 2.5%;
   margin-top: 2%;
   margin-bottom: 1%;
 }
@@ -44,14 +48,13 @@
 .shoolinisocialbutton {
   appearance: none;
   background-color: #FFFFFF;
-  border-radius: 40em;
   border-style: none;
-  box-shadow: #ADCFFF 0 -12px 6px inset;
+  border-radius: 10px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
-  color: #000000;
+  color: #f02f2d;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,sans-serif;
   font-size: 1.2rem;
   font-weight: 700;
   letter-spacing: -.24px;
@@ -68,9 +71,9 @@
 }
 
 .shoolinisocialbutton:hover {
-  background-color: #ff4d4d;
-  box-shadow: #FF6314 0 -6px 8px inset;
-  transform: scale(1.125);
+  background-color: #f02f2d;
+  color: #fff;
+  transform: scale(1.025);
 }
 
 .shoolinisocialbutton:active {
@@ -79,7 +82,7 @@
 
 @media (min-width: 768px) {
   .shoolinisocialbutton {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding: .75rem 2rem;
   }
 }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 15px;
+                margin: 10px auto;
+            }
+
+            .card h3 {
+                font-size: 1.25rem;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 10px;
+            }
+
+            .card h3 {
+                font-size: 1.1rem;
+            }
+
+            .card p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h3>Card Title 1</h3>
+            <p>This is a description for card 1. Adjusted for responsiveness.</p>
+        </div>
+        <div class="card">
+            <h3>Card Title 2</h3>
+            <p>This is a description for card 2. Adjusted for responsiveness.</p>
+        </div>
+        <div class="card">
+            <h3>Card Title 3</h3>
+            <p>This is a description for card 3. Adjusted for responsiveness.</p>
+        </div>
+        <div class="card">
+            <h3>Card Title 4</h3>
+            <p>This is a description for card 4. Adjusted for responsiveness.</p>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -191,3 +191,139 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(displayThreeRandomCards, 5000); // Refresh every 5 seconds
 });
 
+// alumni-section.js
+const alumniData = [
+    {
+        name: "Yash Rathi",
+        image: "./assets/images/test-images/person1.webp",
+        company: "Google",
+        batch: "2018",
+        email: "sarah.j@example.com",
+        linkedin: "sarahj"
+    },
+    {
+        name: "Mrizzu",
+        image: "./assets/images/test-images/person4.jpg",
+        company: "Microsoft",
+        batch: "2019",
+        email: "m.chen@example.com",
+        linkedin: "mchen"
+    },
+    {
+        name: "Kavlin Kaur",
+        image: "./assets/images/test-images/person2.webp ",
+        company: "Amazon",
+        batch: "2017",
+        email: "priya.p@example.com",
+        linkedin: "priyap"
+    },
+    {
+        name: "Kesahv",
+        image: "./assets/images/test-images/person5.jpg",
+        company: "Tesla",
+        batch: "2020",
+        email: "j.wilson@example.com",
+        linkedin: "jwilson"
+    }
+];
+
+function createAlumniCard(alumni) {
+    return `
+      <div class="alumni-card">
+        <div class="card-image">
+          <img src="${alumni.image}" alt="${alumni.name}">
+        </div>
+        <div class="alumni-info">
+          <h3 class="alumni-name">${alumni.name}</h3>
+          <p class="alumni-role"><strong>Company:</strong> ${alumni.company}</p>
+          <p class="alumni-company"><strong>Batch:</strong> ${alumni.batch}</p>
+          <div class="alumni-actions">
+            <button class="contact-btn" onclick="window.location.href='mailto:${alumni.email}'">
+              <i class="fas fa-envelope"></i>
+            </button>
+            <button class="contact-btn" onclick="window.open('https://linkedin.com/in/${alumni.linkedin}', '_blank')">
+              <i class="fab fa-linkedin"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+}
+
+let currentIndex = 0;
+const container = document.getElementById('alumniContainer');
+const cardsToShow = window.innerWidth > 768 ? 3 : 1;
+
+function updateCards() {
+    const visibleAlumni = alumniData.slice(currentIndex, currentIndex + cardsToShow);
+    container.innerHTML = visibleAlumni.map(createAlumniCard).join('');
+
+    currentIndex = (currentIndex + 1) % (alumniData.length - cardsToShow + 1);
+}
+
+// Initial render
+updateCards();
+
+// Auto-update every 3 seconds
+let interval = setInterval(updateCards, 4000);
+
+// Pause on hover
+container.addEventListener('mouseenter', () => clearInterval(interval));
+container.addEventListener('mouseleave', () => interval = setInterval(updateCards, 4000));
+
+
+
+//gallary
+jQuery(document).ready(function ($) {
+    // Initialize Isotope with proper options
+    var $grid = $('.gallery-gird').isotope({
+        itemSelector: '.col-lg-3',
+        layoutMode: 'fitRows',
+        transitionDuration: '0.6s'
+    });
+
+    // Filter items on button click
+    $('.gallery-menu span').on('click', function () {
+        $('.gallery-menu span').removeClass('active');
+        $(this).addClass('active');
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+        return false;
+    });
+
+    // Initialize Magnific Popup for images
+    $('.image-popup').magnificPopup({
+        type: 'image',
+        mainClass: 'mfp-fade',
+        removalDelay: 300,
+        gallery: {
+            enabled: true,
+            navigateByImgClick: true,
+            preload: [0, 1]
+        }
+    });
+
+    // Initialize Magnific Popup for videos
+    $('.video-popup').magnificPopup({
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 300,
+        gallery: {
+            enabled: true
+        },
+        iframe: {
+            patterns: {
+                vimeo: {
+                    index: 'vimeo.com/',
+                    id: '/',
+                    src: '//player.vimeo.com/video/%id%?autoplay=1'
+                }
+            }
+        }
+    });
+
+    // Trigger layout after images are loaded
+    $grid.imagesLoaded().progress(function () {
+        $grid.isotope('layout');
+    });
+});
