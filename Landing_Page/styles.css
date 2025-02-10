@@ -1,13 +1,15 @@
+/* General Reset */
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Header Styles */
+/* Header Styling */
 .header {
     background-color: #F02F2F;
     display: flex;
@@ -15,57 +17,51 @@ body {
     top: 0;
     width: 100%;
     z-index: 1000;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
     transition: all 0.3s ease;
-    height: 11%;
 }
 
+/* Scroll Effect */
 .header.scrolled {
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 11%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Header Items */
 .header-items {
-    width: 100%;
     display: flex;
-    transition: height 0.3s ease;
-}
-
-.header.scrolled .header-items {
-    height: 100%;
-}
-
-/* Logo Container */
-.header-logo {
-    width: 10%;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Logo */
+.header-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    /* Adjust spacing as needed */
 }
 
 .logo-container {
-    height: 100%;
-    width: 100%;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    height: 60px;
+    /* Match the height of your logos */
 }
 
 .logo-container img {
-    height: 80%;
-    width: auto;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    height: 60px;
+    /* Ensure both logos have the same height */
     transition: opacity 0.3s ease;
 }
 
+/* Initial States */
 .logo-red {
     opacity: 0;
 }
@@ -74,6 +70,7 @@ body {
     opacity: 1;
 }
 
+/* Scroll Effect */
 .header.scrolled .logo-red {
     opacity: 1;
 }
@@ -82,175 +79,108 @@ body {
     opacity: 0;
 }
 
-/* Header Info Part */
-.header-info-part {
-    width: 90%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.info-part-container {
-    height: 100%;
-    width: 100%;
-    margin: 0.5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.header.scrolled .info-part-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* Lower Header */
-.lower-header {
-    height: 60%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1rem;
-    transition: all 0.3s ease;
-    gap: 60px;
-}
-
-.header.scrolled .lower-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-/* Navbar */
-.navbar-container {
-    flex: 1;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
+/* Navbar (Desktop) */
 .navbar {
-    width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 60px;
-}
-
-.navbar div {
-    color: white;
-    font-size: 18px;
-    font-family: "Poppins";
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.navbar div:hover {
-    transform: translateY(-3px);
+    gap: 40px;
+    margin-left: auto;
+    /* Push navbar to the right */
 }
 
 .navbar a {
     text-decoration: none;
-    color: inherit;
-    display: block;
-    position: relative;
+    color: white;
+    font-size: 18px;
+    font-family: "Poppins";
+    transition: transform 0.3s ease;
 }
 
-.navbar a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: currentColor;
-    transition: width 0.3s ease;
+.navbar a:hover {
+    transform: translateY(-3px);
 }
 
-.navbar a:hover::after {
-    width: 100%;
-}
-
-.header.scrolled .navbar div {
+.header.scrolled .navbar a {
     color: #F02F2F;
 }
 
-/* Sponsorship Button */
+/* Login Button */
 .Sponsership {
-    width: auto;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-left: auto;
+    /* Push login button to the right */
+    margin-right: 20px;
+    /* Adjust spacing as needed */
 }
 
-.Sponsership-Button button {
-    display: inline-block;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    color: #F02F2D;
+.Sponsership button {
     background-color: white;
+    color: #F02F2F;
     border: 2px solid white;
+    padding: 8px 16px;
+    font-weight: 600;
     border-radius: 10px;
     cursor: pointer;
-    white-space: nowrap;
+    transition: 0.3s ease;
 }
 
-.header.scrolled .Sponsership-Button button {
-    color: white;
+.header.scrolled .Sponsership button {
     background-color: #F02F2F;
+    color: white;
     border: 2px solid #F02F2F;
 }
 
-/* Responsive Design */
-@media (width: 1024px) {
-    .navbar div {
-        font-size: 16px;
-    }
-
-    .navbar {
-        gap: 50px;
-    }
-
-    .lower-header {
-        padding: 0 1rem;
-    }
+/* Hamburger Icon (Hidden by Default) */
+.hamburger {
+    font-size: 28px;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    display: none;
+    margin-right: 20px;
+    /* Adjust spacing as needed */
 }
 
-@media (width: 768px) {
-    .navbar div {
-        font-size: 16px;
+/* Mobile Styles (Below 768px) */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        /* Show hamburger icon on mobile */
+    }
+
+    .header.scrolled .hamburger {
+        color: #F02F2F;
     }
 
     .navbar {
-        gap: 30px;
+        display: none;
+        /* Hide navbar by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #F02F2F;
+        text-align: center;
+        padding: 10px 0;
     }
 
-    .lower-header {
-        padding: 0 0.5rem;
-        gap: 10px;
-    }
-
-    .logo-container {
-        height: 65%;
-        width: 65%;
+    .navbar.show {
+        display: flex;
+        /* Show navbar when toggled */
     }
 
     .header-logo {
-        width: 17%;
+        margin-left: 0;
+        /* Adjust spacing for mobile */
     }
 
-    .header-info-part {
-        width: 83%;
+    .Sponsership {
+        margin-right: 10px;
+        /* Adjust spacing for mobile */
     }
+
+    .header.scrolled .navbar a {
+        color: #ffffff;
+    }
+
 }
 
 /* Slideshow */
@@ -263,7 +193,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
-    margin-top: 5%;
+    margin-top: 4%;
 }
 
 .my-slideshow {
@@ -1201,12 +1131,163 @@ to {
     }
 }
 
+/* Footer Styling New For responsiveness added */
+
+/* Footer styling */
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #333;
+    /* Footer background */
+    color: white;
+    /* Text color */
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px;
+    text-align: center;
+    /* Center align text */
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Footer logo section styling */
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center align items */
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 5px;
+}
+
+.certification {
+    margin-top: 15px;
+    max-width: 150px;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .footer-section.links {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .footer-upper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .footer-lower {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .footer-section {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .footer-upper .footer-section {
+        flex: 1;
+        margin: 10px;
+        text-align: left;
+    }
+
+    .footer-lower .footer-section {
+        flex: 1;
+        margin: 10px;
+        text-align: left;
+    }
+
+    .footer-upper .footer-section.links {
+        order: 1;
+    }
+
+    .footer-lower .logo-section,
+    .footer-lower .contact-section {
+        order: 2;
+        margin-top: 20px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .logo-section img {
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-upper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .footer-lower {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .footer-section {
+        flex: 1;
+        margin: 10px;
+    }
+
+    .logo-section,
+    .contact-section {
+        align-items: center;
+        text-align: center;
+    }
+}
+
 /* footer styling */
 .footer {
     display: flex;
     width: 100%;
-    /* border-top: 1px solid #ff4d4d; */
-
 }
 
 .footer-container {
@@ -1234,7 +1315,9 @@ to {
     text-align: center;
     color: #fff;
     width: 100%;
-    padding: 20px 0 20px 0;
+    padding: 20px 0;
+    align-items: center;
+    /* Center align items */
 }
 
 .logo-section p {
@@ -1244,6 +1327,8 @@ to {
 .logo {
     height: 150px;
     object-fit: contain;
+    margin: 0 auto;
+    /* Center align image */
 }
 
 .certification {
@@ -1251,6 +1336,8 @@ to {
     width: 100px;
     height: 100px;
     object-fit: contain;
+    margin: 0 auto;
+    /* Center align image */
 }
 
 .footer .social-links {
@@ -1268,7 +1355,6 @@ to {
     border-radius: 50%;
     color: #000;
     transition: all 0.5s ease;
-
 }
 
 .social-links {
@@ -1296,7 +1382,6 @@ to {
 .footer-section ul {
     list-style: none;
     padding: 0;
-
 }
 
 .footer-section ul li {
@@ -1327,10 +1412,7 @@ to {
 
 p.footer-link {
     padding: 1px;
-    /* position: relative; */
-    /* font-size: 15px !important; */
     color: #ffff;
-
 }
 
 .mail-link {
@@ -1770,4 +1852,150 @@ body {
 .contact-btn i {
     font-size: 1.5rem;
     /* Increased icon size */
+}
+
+/* General Mobile Styles */
+@media (max-width: 768px) {
+
+    /* Slideshow */
+    .slideshow {
+        height: 300px;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+    }
+
+    /* Welcome Register Section */
+    .Welcome-Register-Section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .shoolini-socials-intro-container {
+        width: 100%;
+    }
+
+    .Directors-Message {
+        width: 100%;
+    }
+
+    .director-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .director-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .message-box {
+        height: auto;
+    }
+
+    /* Events Notice Section */
+    .Events-Notice-Section {
+        flex-direction: column;
+    }
+
+    .notice-board-container {
+        width: 100%;
+    }
+
+    .events-detail-cards-box {
+        width: 100%;
+    }
+
+    .event-card {
+        width: 100%;
+    }
+
+    /* Alumni Stats Section */
+    .Stats-Horizontal-Section {
+        flex-direction: column;
+    }
+
+    .alumni-stats {
+        flex-direction: column;
+    }
+
+    .social-post {
+        width: 100%;
+    }
+
+    .chapters-batch-box {
+        width: 100%;
+    }
+
+    .chapters-row1 {
+        flex-direction: column;
+    }
+
+    .be-a-mentor-container {
+        width: 100%;
+    }
+
+    .chapters-row1-col2 {
+        width: 100%;
+    }
+
+}
+
+/* Additional Mobile Styles for Smaller Screens */
+@media (max-width: 480px) {
+
+    /* Slideshow */
+    .slideshow {
+        height: 200px;
+    }
+
+    .arrow {
+        font-size: 1.2rem;
+    }
+
+    /* Welcome Register Section */
+    .shoolini-socials-intro h2 {
+        font-size: 1.5rem;
+    }
+
+    .shoolini-socials-intro p {
+        font-size: 14px;
+    }
+
+    .register-now-button {
+        margin-left: 0;
+    }
+
+    /* Director's Message Section */
+    .director-image p {
+        font-size: 16px;
+    }
+
+    .message-box {
+        padding: 5px;
+    }
+
+    /* Events Notice Section */
+    .notice-board h3 {
+        font-size: 1.4rem;
+    }
+
+    .notice-board p {
+        font-size: 0.8rem;
+    }
+
+    .event-card {
+        width: 100%;
+    }
+
+    /* Alumni Stats Section */
+    .social-text h3 {
+        font-size: 2rem;
+    }
+
+    .social-text p {
+        font-size: 1rem;
+    }
+
 }

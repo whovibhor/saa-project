@@ -1,10 +1,12 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Design</title>
+    <title>Header with Mobile Menu</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,95 +15,288 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            font-family: 'Poppins', sans-serif;
+            padding-top: 80px;
         }
 
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            width: 90%;
-            max-width: 1200px;
+        /* Header Styles */
+        .header {
+            background-color: #F02F2F;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            z-index: 100;
+            transition: all 0.3s ease;
         }
 
-        .card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 20px;
+        .header.scrolled {
+            background-color: white;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
 
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .header-items {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1.5rem;
         }
 
-        .card p {
-            font-size: 1rem;
-            color: #555;
+        /* Logo Styles */
+        .header-logo {
+            position: relative;
+            height: 50px;
+            z-index: 102;
         }
 
+        .logo-container img {
+            height: 50px;
+            width: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo-red {
+            opacity: 0;
+        }
+
+        .logo-white {
+            opacity: 1;
+        }
+
+        .header.scrolled .logo-red {
+            opacity: 1;
+        }
+
+        .header.scrolled .logo-white {
+            opacity: 0;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .header.scrolled .navbar a {
+            color: #F02F2F;
+        }
+
+        .navbar a:hover {
+            transform: translateY(-3px);
+        }
+
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        .navbar a:hover::after {
+            width: 100%;
+        }
+
+        /* Login Button Styles */
+        .login-button {
+            padding: 8px 16px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #F02F2D;
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 102;
+            position: relative;
+        }
+
+        .header.scrolled .login-button {
+            color: white;
+            background-color: #F02F2F;
+            border-color: #F02F2F;
+        }
+
+        /* Mobile Toggle Button */
+        .mobile-toggle {
+            display: none;
+            z-index: 102;
+        }
+
+        .hamburger-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled .hamburger-btn span {
+            background-color: #F02F2F;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Mobile Styles */
         @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
+            .mobile-toggle {
+                display: block;
             }
 
-            .card {
-                padding: 15px;
-                margin: 10px auto;
+            .navbar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 280px;
+                height: 100vh;
+                background-color: white;
+                flex-direction: column;
+                padding: 100px 20px 20px;
+                gap: 30px;
+                transition: left 0.3s ease;
+                z-index: 101;
+                align-items: flex-start;
             }
 
-            .card h3 {
-                font-size: 1.25rem;
+            .navbar.active {
+                left: 0;
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
             }
 
-            .card p {
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .card {
-                padding: 10px;
+            .navbar a {
+                color: #F02F2F !important;
+                font-size: 16px;
+                width: 100%;
+                padding: 10px 0;
             }
 
-            .card h3 {
-                font-size: 1.1rem;
-            }
-
-            .card p {
-                font-size: 0.8rem;
+            .desktop-nav {
+                display: none;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <h3>Card Title 1</h3>
-            <p>This is a description for card 1. Adjusted for responsiveness.</p>
+    <header class="header">
+        <div class="header-items">
+            <div class="mobile-toggle">
+                <button class="hamburger-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <div class="header-logo">
+                <div class="logo-container">
+                    <img class="logo-white" src="./assets/images/logo/shoolini-logo-white.png" alt="White Logo">
+                    <img class="logo-red" src="./assets/images/logo/newlogo.png" alt="Red Logo">
+                </div>
+            </div>
+
+            <nav class="navbar">
+                <a href="../aboutus/index.html">About Us</a>
+                <a href="#">Alumni Trails</a>
+                <a href="../palcement news/mainpage.html">News & Stories</a>
+                <a href="../Alumini_Assist/index.html">Alumni Assist</a>
+                <a href="#">Volunteer</a>
+            </nav>
+
+            <button class="login-button" onclick="location.href='../Login-ShooliniSocials/Login-index.html'">
+                Login
+            </button>
         </div>
-        <div class="card">
-            <h3>Card Title 2</h3>
-            <p>This is a description for card 2. Adjusted for responsiveness.</p>
-        </div>
-        <div class="card">
-            <h3>Card Title 3</h3>
-            <p>This is a description for card 3. Adjusted for responsiveness.</p>
-        </div>
-        <div class="card">
-            <h3>Card Title 4</h3>
-            <p>This is a description for card 4. Adjusted for responsiveness.</p>
-        </div>
-    </div>
+    </header>
+
+    <div class="mobile-menu-overlay"></div>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu functionality
+        const hamburgerBtn = document.querySelector('.hamburger-btn');
+        const navbar = document.querySelector('.navbar');
+        const overlay = document.querySelector('.mobile-menu-overlay');
+
+        function toggleMenu() {
+            navbar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = navbar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        hamburgerBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        overlay.addEventListener('click', toggleMenu);
+
+        // Close menu on escape key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && navbar.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+
+        // Prevent menu from closing when clicking inside
+        navbar.addEventListener('click', function (e) {
+            e.stopPropagation();
+        });
+    </script>
 </body>
 
 </html>

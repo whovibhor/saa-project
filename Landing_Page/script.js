@@ -52,15 +52,21 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(nextSlide, 3000); // Auto-slide every 3 seconds
 });
 
-//for Header
+// Toggle menu function
+function toggleMenu() {
+    document.querySelector('.navbar').classList.toggle('show');
+}
 
-window.addEventListener('scroll', function () {
-    const header = document.querySelector('.header');
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
+// Optimize Scroll Effect
+window.addEventListener('scroll', () => {
+    requestAnimationFrame(() => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
 });
 
 //for typewritter effect

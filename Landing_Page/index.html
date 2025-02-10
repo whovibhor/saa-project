@@ -28,9 +28,11 @@
 
 <body>
 
-
     <header class="header">
         <div class="header-items">
+            <!-- Hamburger Icon -->
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+
             <!-- Logo -->
             <div class="header-logo">
                 <div class="logo-container">
@@ -39,30 +41,22 @@
                 </div>
             </div>
 
-            <!-- Info Part -->
-            <div class="header-info-part">
-                <!-- Lower Header -->
-                <div class="lower-header">
-                    <div class="navbar-container">
-                        <div class="navbar">
-                            <div><a href="../aboutus/index.html">About Us</a></div>
-                            <div><a href="#">Alumni Trails</a></div>
-                            <div><a href="../palcement news/mainpage.html">News & Stories</a></div>
-                            <div><a href="../Alumini_Assist/index.html">Alumni
-                                    Assist</a></div>
-                            <div><a href="#">Volunteer</a></div>
-                        </div>
-                    </div>
-                    <div class="Sponsership">
-                        <div class="Sponsership-Button">
-                            <button onclick="location.href='../Login-ShooliniSocials/Login-index.html'">Login</button>
-                        </div>
-                    </div>
-                </div>
+            <!-- Navigation Menu -->
+            <nav class="navbar">
+                <a href="../aboutus/index.html">About Us</a>
+                <a href="#">Alumni Trails</a>
+                <a href="../palcement news/mainpage.html">News & Stories</a>
+                <a href="../Alumini_Assist/index.html">Alumni Assist</a>
+                <a href="#">Volunteer</a>
+            </nav>
+
+            <!-- Login Button -->
+            <div class="Sponsership">
+                <button onclick="location.href='../Login-ShooliniSocials/Login-index.html'">Login</button>
             </div>
         </div>
-        </div>
     </header>
+
 
     <!--Image-SlideShow-Section-->
     <section class="slideshow">
@@ -597,11 +591,12 @@
                 <div class="social-links">
                     <a href=""><i class="fab fa-facebook-f"></i></a>
                     <a href=""><i class="fab fa-twitter"></i></a>
-                    <a href=""><i class="fab fa-instagram "></i></a>
+                    <a href=""><i class="fab fa-instagram"></i></a>
                     <a href=""><i class="fab fa-linkedin"></i></a>
                 </div>
                 <img src="./assets/images/logo/image.png" alt="Great Place to Work" class="certification">
             </div>
+
             <!-- Quick Links Section -->
             <div class="footer-section links">
                 <h3>Quick Links</h3>
@@ -612,18 +607,19 @@
                     <li><a href="#">FAQs</a></li>
                 </ul>
             </div>
-            <!-- other links section -->
+
+            <!-- Other Links Section -->
             <div class="footer-section links">
-                <h3>other links</h3>
+                <h3>Other Links</h3>
                 <ul>
                     <li><a href="#">College coordinators</a></li>
                     <li><a href="#">student coordinators</a></li>
                     <li><a href="#">your mentor</a></li>
                     <li><a href="#">Admissions</a></li>
                     <li><a href="#">RTI Act</a></li>
-
                 </ul>
             </div>
+
             <!-- Contact Section -->
             <div class="footer-section contact-section links">
                 <h3>Contact</h3>
@@ -634,10 +630,9 @@
                 </p>
                 <p><strong>Reception:</strong> 01792-350000 / 7807899712</p>
                 <p class="footer-link">
-                    Copyright ©2025 Shoolini Foundation of Life Sciences and Business Management</p>
+                    Copyright ©2025 Shoolini Foundation of Life Sciences and Business Management
                 </p>
             </div>
-
         </div>
     </footer>
     <script src="script.js"></script>
